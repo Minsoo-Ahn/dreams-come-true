@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {NavbarData} from '../../../data/NavbarData';
-import '../../../css/Navbar/Navbar.css';
+import {NavbarData} from '../../data/NavbarData';
+import '../../css/navbar/Navbar.css';
 import {IconContext} from 'react-icons';
 import Profile from "./Profile";
 

@@ -1,4 +1,4 @@
-import image from "../../../asset/images.jpeg"
+import image from "../../asset/images.jpeg"
 import {Card, FormControl, InputGroup} from "react-bootstrap";
 function Profile() {
     return (

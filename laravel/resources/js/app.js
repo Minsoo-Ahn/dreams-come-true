@@ -1,8 +1,6 @@
-
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from '../router/index'
+import Router from '../router'
 function App() {
     return (
         <div>
