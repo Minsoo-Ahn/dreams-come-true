@@ -4,6 +4,7 @@ import Navbar from '../components/navbar/Navbar';
 import Example from '../components/Example';
 import PostForm from "../components/posts/PostForm";
 import PostDetail from "../components/posts/PostDetail";
+import AllPosts from "../pages/AllPosts";
 
 function Router(props) {
     console.log(props)
@@ -15,7 +16,7 @@ function Router(props) {
                     <Switch>
                         <Route exact path="/" component={Example}/>
                         <Route path="/about" component={Example}/>
-                        <Route path="/portfolio/:portfolio" component={Example}/>
+                        <Route path="/portfolio/:portfolio" component={AllPosts}/>
                         <Route path="/works/:works" component={PostDetail}/>
                         <Route path="/words/:words" component={PostForm}/>
                         <Route path="/todoList/:todoList" component={Example}/>
