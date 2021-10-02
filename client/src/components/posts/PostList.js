@@ -1,9 +1,19 @@
 import {Fragment} from "react";
 import Post from "./Post";
 import {Col, Row} from "react-bootstrap";
+import axios from "axios";
 
 const PostList = (props) => {
     const posts = props.posts
+
+    // try {
+    //     let postsList = await axios.get("/api/getPosts");
+    //     postsList.data.map(post => {
+    //         console.log(post)
+    //     })
+    // } catch (err) {
+    //     console.log(err);
+    // }
 
     return (
         <Fragment>
