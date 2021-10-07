@@ -9,14 +9,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/addPost', function(req, res, next) {
-    const post = Posts;
+    const post = Posts();
     console.log("here!!")
     console.log(req.body)
-    const title = req.body.title;
-    const content = req.body.content;
-
-    post.title = title;
-    post.content = content;
+    post.createdAt = Date.now
+    post.title = req.body.title;
+    post.content = req.body.content;
 
     return post.save().then((post) => res.send(post)).catch((error) => res.status(500).send({error}));
 });

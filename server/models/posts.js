@@ -6,9 +6,9 @@ const postSchema = new Schema({
     title: String,
     content: String,
     imageUrl: { type: String, default: null  },
-    createdAt: { type: Date, default: Date.now  },
+    createdAt: Date,
     updatedAt: { type: Date, default: Date.now  },
     isShow: { type: Boolean, default: true  }
 });
 
-module.exports = mongoose.model('post', postSchema);
+module.exports = mongoose.model('posts', postSchema);

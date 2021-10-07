@@ -41,14 +41,14 @@ function PostForm() {
         Post.content = content
         setFormInfo(Post)
 
-        // await axios
-        //     .post("/api/addPost", {
-        //         title: formInfo.title,
-        //         content: formInfo.content
-        //     })
-        //     .then((result) => {
-        //         console.log("successfully posted")
-        //     })
+        await axios
+            .post("/api/posts/addPost", {
+                title: formInfo.title,
+                content: formInfo.content
+            })
+            .then((result) => {
+                console.log("successfully posted")
+            })
     }
 
     const finishEnteringHandler = () => {
