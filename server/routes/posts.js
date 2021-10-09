@@ -3,16 +3,16 @@ var router = express.Router();
 
 var Posts = require('../models/posts');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-    return Posts.find({}).sort({regdate: -1}).then((post) => res.send(post));
+    console.log("?????")
+    return Posts.find({}).sort({createdAt: -1}).then((post) => res.send(post));
 });
 
 router.post('/addPost', function(req, res, next) {
     const post = Posts();
-    console.log("here!!")
     console.log(req.body)
-    post.createdAt = Date.now
+    post.createdAt = Date.now()
+    console.log(post.createdAt)
     post.title = req.body.title;
     post.content = req.body.content;
 

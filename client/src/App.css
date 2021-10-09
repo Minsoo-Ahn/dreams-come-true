@@ -3,6 +3,10 @@
   min-height: 100%;
 }
 
+hr {
+  margin: auto 80px;
+  border: 1px solid lightgrey;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

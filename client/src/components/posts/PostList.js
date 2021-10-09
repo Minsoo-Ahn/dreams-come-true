@@ -6,28 +6,20 @@ import axios from "axios";
 const PostList = (props) => {
     const posts = props.posts
 
-    // try {
-    //     let postsList = await axios.get("/api/getPosts");
-    //     postsList.data.map(post => {
-    //         console.log(post)
-    //     })
-    // } catch (err) {
-    //     console.log(err);
-    // }
-
     return (
         <Fragment>
-            <Row xs={1} md={2} className="g-4">
-                {posts.map((post) => (
-                    <Col>
-                        <Post
-                            key={post.id}
-                            url={post.url}
-                            title={post.title}
-                            text={post.text}/>
-                    </Col>
-                ))}
-            </Row>
+            {posts.map((post) => (
+                <>
+                    <Row className="g-4" style={{marginLeft: 50}}>
+                        <Col>
+                            <Post
+                                key={post.id}
+                                post={post}/>
+                        </Col>
+                    </Row>
+                    <hr/>
+                </>
+            ))}
         </Fragment>
     )
 }
