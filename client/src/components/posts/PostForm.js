@@ -24,27 +24,27 @@ import uml from '@toast-ui/editor-plugin-uml';
 import classes from '../../css/posts/PostForm.module.css'
 import Post from "../../models/Post";
 import axios from "axios";
+import {Form} from "react-bootstrap";
+import {NavbarData} from "../../data/NavbarData";
 
 function PostForm() {
     const [isEntering, setIsEntering] = useState(false);
 
     const titleInputRef = useRef();
     const editorRef = useRef();
-    const [formInfo, setFormInfo] = useState(Post)
+    const [category, setCategory] = useState("")
 
     async function submitFormHandler(event) {
         event.preventDefault();
 
         const title = titleInputRef.current.value;
         const content = editorRef.current.getInstance().getMarkdown();
-        Post.title = title
-        Post.content = content
-        setFormInfo(Post)
 
         await axios
             .post("/api/posts/addPost", {
-                title: formInfo.title,
-                content: formInfo.content
+                title: title,
+                content: content,
+                category: category
             })
             .then((result) => {
                 console.log("successfully posted")
@@ -76,6 +76,17 @@ function PostForm() {
                 className={classes.form}
                 onSubmit={submitFormHandler}
             >
+                <div className={classes.control}>
+                    <label htmlFor='author'>Category</label>
+                    <Form.Control onChange={event => {
+                        setCategory(event.target.value)
+                        console.log(event.target.value)
+                    }} as="select" aria-label="Category">
+                        <option>Categoryを選んでください</option>
+                        <option value="PHP">PHP</option>
+                        <option value="AWS">AWS</option>
+                    </Form.Control>
+                </div>
 
                 <div className={classes.control}>
                     <label htmlFor='author'>Title</label>

@@ -1,4 +1,3 @@
-import {Card} from "react-bootstrap";
 import image from "../../asset/noimage.webp"
 import {Link} from "react-router-dom";
 import React from "react";
@@ -6,7 +5,8 @@ import React from "react";
 function Post(props) {
     return (
         <div className="card mb-3" style={{width: '500px'}}>
-            <Link to={props.post.id}>
+            <Link to={{pathname :`${window.location.pathname}/${props.post.id}`,
+                    param : props.post}}>
                     <div className="col-md-4">
                         <svg
                             width="100%"

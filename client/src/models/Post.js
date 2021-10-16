@@ -3,13 +3,15 @@ class Post {
     title = null;
     content = null;
     imageUrl = null
+    category = null
     createdAt = null;
     updatedAt = null;
     isShow = null;
 
-    constructor(title, content){
+    constructor(title, content, category){
         this.title = title
         this.content = content
+        this.category = category
     }
 
     // constructor(id, title, content, imageUrl , createdAt, updatedAt, isShow) {

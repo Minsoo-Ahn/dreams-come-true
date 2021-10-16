@@ -15,6 +15,7 @@ router.post('/addPost', function(req, res, next) {
     console.log(post.createdAt)
     post.title = req.body.title;
     post.content = req.body.content;
+    post.category = req.body.category;
 
     return post.save().then((post) => res.send(post)).catch((error) => res.status(500).send({error}));
 });

@@ -6,6 +6,7 @@ const postSchema = new Schema({
     title: String,
     content: String,
     imageUrl: { type: String, default: null  },
+    category: { type: String, default: null  },
     createdAt: Date,
     updatedAt: { type: Date, default: Date.now  },
     isShow: { type: Boolean, default: true  }
